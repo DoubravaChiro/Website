@@ -6,11 +6,14 @@ body {
 }
 
 #nav {
-    height: auto;
+    height: 95%;
     width: 160px;
     position: fixed;
-    background: #539564;
+    background: rgba(0,0,0,0);
     left: 25px;
+    top: 10px;
+    border-right: 2px dotted #539564;
+    padding-right: 30px;
 }
 
 a.nav {
@@ -19,6 +22,7 @@ a.nav {
   color: white;
   font-size: 25px;
   display: block;
+  border-bottom: 2px dotted #539564;
 }
 
 a {
@@ -36,5 +40,13 @@ section {
 }
 
 h1 {
+    font-size: 25px;
     color: #539564;
+}
+
+.line {
+    border-left: 2px dotted #539564;
+    height: 93%;
+    position: fixed;
+    left: 215px;
 }
