@@ -44,9 +44,8 @@ h1 {
     color: #539564;
 }
 
-.line {
-    border-left: 2px dotted #539564;
-    height: 93%;
-    position: fixed;
-    left: 215px;
+#cory {
+    width: 200px;
+    float: left;
+    margin-right: 10px;
 }
