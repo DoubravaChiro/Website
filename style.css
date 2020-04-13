@@ -1,0 +1,40 @@
+body {
+    font-family: "Montserrat", "sans-serif";
+    background: black;
+    color: white;
+    padding: 0;
+}
+
+#nav {
+    height: auto;
+    width: 160px;
+    position: fixed;
+    background: #539564;
+    left: 25px;
+}
+
+a.nav {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  display: block;
+}
+
+a {
+    color: #a2d289;
+}
+
+a.nav:hover {
+    color: #a2d289;
+    transition: .3s;
+}
+
+section {
+    margin-left: 120px;
+    margin-right: 40px;
+}
+
+h1 {
+    color: #539564;
+}
