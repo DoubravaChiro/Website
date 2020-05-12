@@ -5,6 +5,7 @@
     <title>Doubrava Family Chiropractic</title>
     <link href="style.css" type="text/css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap" rel="stylesheet">
+    <script type="module">import{init} from "./src/main.js"; window.onload = init;</script>
 </head>
 <body>
     <div id="nav">
@@ -95,9 +96,7 @@
         <section id="directions">
             <div>
                 <h1>Directions</h1>
-                <p>How to get there! Maybe look into Mapbox or Mapquest for an API we can use to display an interactive map with
-                Cory's office</p>
-                <p>We're going to use Google Maps because it has the best scalability (pay as you use it)</p>
+                <div id="map"></div>
             </div>
         </section>
 

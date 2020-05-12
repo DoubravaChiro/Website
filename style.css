@@ -49,3 +49,7 @@ h1 {
     float: left;
     margin-right: 10px;
 }
+
+#map {
+    height: 500px;
+}
