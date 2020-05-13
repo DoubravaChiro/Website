@@ -4,13 +4,16 @@ export{ init }
 const key = "AIzaSyAUWe8KAjLLC1vkGBDXfeTKGtSpk2MTUZM";
 var map;
 var geocoder;
+var directionService;
+var directionRenderer;
 var infoWindow;
 var marker
-const office = "32 Washington Ave. Endicott, NY 13760";
+const office = "32 Washington Ave. Endicott, NY 13760"; // if the office ever moves, make sure to change this
+
 function init(){
     // Create the script tag, set the appropriate attributes
     var script = document.createElement('script');
-    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAUWe8KAjLLC1vkGBDXfeTKGtSpk2MTUZM&callback=initMap';
+    script.src = 'https://maps.googleapis.com/maps/api/js?key=' + key + '&callback=initMap';
     script.defer = true;
     script.async = true;
 
@@ -18,8 +21,12 @@ function init(){
     window.initMap = function() {
       // JS API is loaded and available
       mapInit();
-      geocoderInit();
+      geocoder = new google.maps.Geocoder();
+      directionService = new google.maps.DirectionsService();
+      directionRenderer = new google.maps.DirectionsRenderer();
+      directionRenderer.setMap(map);
       codeOffice();
+      getUserLoc();
     };
 
     // Append the 'script' element to 'head'
@@ -29,14 +36,9 @@ function init(){
 // initializes the map
 function mapInit(){
     map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 42.0984, lng: -76.0494},
+          center: {lat: 42.0984, lng: -76.0494}, // that's Endicott's coords, in case any devs that aren't me touch this code
           zoom: 8
         });
-}
-
-// initialize the geocoder
-function geocoderInit(){
-    geocoder = new google.maps.Geocoder();
 }
 
 // recenter map on the office and set a marker on the office location
@@ -56,3 +58,36 @@ function codeOffice(){
     } );
 }
 
+// gets the user's location and feeds it into the directions api
+function getUserLoc(){
+    // if the HTML 5 geolocator exists/is allowed to run
+    if (navigator.geolocation) {
+        let pos = {};
+        navigator.geolocation.getCurrentPosition(function(position){
+            pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+            let route = {
+                origin: pos,
+                destination: office,
+                travelMode: "DRIVING"
+            };
+            directionService.route(route, setRoute);
+        });
+    }
+    // if the HTML 5 geolocator does not exist/is not allowed to run
+    else {
+        Window.alert("Could not get user location.");
+    }
+}
+
+// callback for the direction's api
+function setRoute(DirectionsResult, DirectionStatus){
+    if (DirectionStatus == 'OK'){
+        directionRenderer.setDirections(DirectionsResult);
+    }
+    else {
+        Window.alert("Could not find route: " + DirectionStatus);
+    }
+}
