@@ -2,13 +2,14 @@ export{ init }
 
 
 const key = "AIzaSyAUWe8KAjLLC1vkGBDXfeTKGtSpk2MTUZM";
+const office = "32 Washington Ave. Endicott, NY 13760"; // if the office ever moves, make sure to change this
 var map;
 var geocoder;
 var directionService;
 var directionRenderer;
 var infoWindow;
-var marker
-const office = "32 Washington Ave. Endicott, NY 13760"; // if the office ever moves, make sure to change this
+var marker;
+var collapsible;
 
 function init(){
     // Create the script tag, set the appropriate attributes
@@ -31,6 +32,11 @@ function init(){
 
     // Append the 'script' element to 'head'
     document.head.appendChild(script);
+
+    collapsible = document.getElementsByClassName("collapsible");
+    for (let i = 0; i < collapsible.length; i++){
+        collapsible[i].addEventListener("click", collapsibleOnClick);
+    }
 }
 
 // initializes the map
@@ -90,4 +96,20 @@ function setRoute(DirectionsResult, DirectionStatus){
     else {
         Window.alert("Could not find route: " + DirectionStatus);
     }
+}
+
+function collapsibleOnClick(){
+        let content = this.nextElementSibling;
+        console.log(content.style.maxHeight);
+        debugger;
+        if (this.value == "false"){
+            this.value = "true";
+            content.style.maxHeight = "1000px";
+            this.style.borderBottom = "2px solid #539564";
+        }
+        else {
+            this.value = "false";
+            content.style.maxHeight = "0px";
+            this.style.borderBottom = "0px";
+        }
 }
