@@ -1,7 +1,7 @@
 body {
-    font-family: "proxima-nova-light";
-    background: #e6f9ff;
-    color: black;
+    font-family: "Montserrat", "sans-serif";
+    background: black;
+    color: white;
     padding: 0;
 }
 
@@ -19,7 +19,7 @@ body {
 a.nav {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  color: black;
+  color: white;
   font-size: 25px;
   display: block;
   border-bottom: 2px dotted #539564;
@@ -42,7 +42,6 @@ section {
 h1 {
     font-size: 25px;
     color: #539564;
-    font-family: "rockwell-nova";
 }
 
 #cory {
