@@ -12,7 +12,7 @@ const directions = '<a href="#directions" class="nav">Directions</a>';
 
 function initNav(){
     let div = document.createElement("div");
-    let nav = home + treatment + about + payment + hours + contact + appointment + directions;
+    let nav = home + treatment + about + payment + hours + contact + directions;
     div.innerHTML = nav;
     div.setAttribute("id", "nav");
     console.log(div);
