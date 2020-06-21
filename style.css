@@ -19,7 +19,7 @@ body {
 a.nav {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  color: black;
+  color: #539564;
   font-size: 25px;
   display: block;
   border-bottom: 2px dotted #539564;
@@ -97,3 +97,8 @@ h1 {
     padding-bottom: 5px;
 }
 
+#hoursList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
