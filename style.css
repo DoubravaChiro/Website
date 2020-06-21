@@ -1,0 +1,104 @@
+body {
+    font-family: "proxima-nova-light";
+    background: #e6f9ff;
+    color: black;
+    padding: 0;
+}
+
+#nav {
+    height: 95%;
+    width: 160px;
+    position: fixed;
+    background: rgba(0,0,0,0);
+    left: 25px;
+    top: 10px;
+    border-right: 2px dotted #539564;
+    padding-right: 30px;
+}
+
+a.nav {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  color: #539564;
+  font-size: 25px;
+  display: block;
+  border-bottom: 2px dotted #539564;
+}
+
+a {
+    color: #a2d289;
+}
+
+a.nav:hover {
+    color: #a2d289;
+    transition: .3s;
+}
+
+section {
+    margin-left: 120px;
+    margin-right: 40px;
+}
+
+h1 {
+    font-size: 25px;
+    color: #539564;
+    font-family: "rockwell-nova";
+}
+
+#cory {
+    width: 200px;
+    float: left;
+    margin-right: 10px;
+}
+
+#map {
+    height: 500px;
+}
+
+#footer {
+    padding-top: 50px;
+    text-align: center;
+    font-size: 12px;
+    color: #539564;
+}
+
+.collapsible {
+    padding: 0;
+    color: #539564;
+    font-size: 22px;
+    background: rgba(0,0,0,0);
+    width: 100%;
+    border: 0px;
+    font-weight: 200;
+    transition: .5s ease-in-out;
+}
+
+.collapsible:hover {
+    color: white;
+    background: #539564;
+
+}
+
+.collapsible-content{
+    overflow: hidden;
+    max-height: 0;
+    margin: 0;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.treatmentOption {
+    width: 48%;
+    border: 2px solid #539564;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.row {
+    padding-bottom: 5px;
+}
+
+#hoursList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
